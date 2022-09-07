@@ -4,3 +4,23 @@ const getComputerChoice = () => {
     console.log(computerChoice);
     return choices[computerChoice];
 }
+
+const getResult = (playerChoice, computerChoice) => {
+    let score;
+
+    if (playerChoice == computerChoice) {
+        score = 0;
+        // human wins score is 1
+    } else if (playerChoice == 'rock' && computerChoice == 'scissors') {
+        score = 1
+    } else if (playerChoice == 'paper' && computerChoice == 'rock') {
+        score = 1
+    } else if (playerChoice == 'scissors' && computerChoice == 'paper') {
+        score = 1
+        // otherwise human loses
+    } else {
+        score = -1;
+    }
+    //return score
+    return score;
+}
