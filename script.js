@@ -5,6 +5,7 @@ const getComputerChoice = () => {
     return choices[computerChoice];
 }
 
+
 const getResult = (playerChoice, computerChoice) => {
     let score;
 
@@ -26,8 +27,17 @@ const getResult = (playerChoice, computerChoice) => {
 }
 
 
-const onClickRPS = (playerChoice) => {
+const showResult = (score, playerChoice, computerChoice) => {
 
+}
+
+
+//calculates who won and displays on screen
+const onClickRPS = (playerChoice) => {
+    const computerChoice = getComputerChoice()
+    const score = getResult(playerChoice, computerChoice)
+    totalScore['playerScore'] += score
+    showResult(score, playerChoice, computerChoice)
 }
 
 
@@ -36,10 +46,12 @@ const onClickRPS = (playerChoice) => {
 // calls the onClickRPS function everytime player clicks
 
 const playGame = () => {
-
     const rpsButtons = document.querySelectorAll('.rpsButton')
     rpsButtons.onclick = () => rpsButtons.value
     rpsButtons.forEach(rpsButton => {
         rpsButton.onclick = () => onClickRPS(rpsButton.value)
     })
 }
+
+playGame()
+
