@@ -24,3 +24,22 @@ const getResult = (playerChoice, computerChoice) => {
     //return score
     return score;
 }
+
+
+const onClickRPS = (playerChoice) => {
+
+}
+
+
+// selects all RPS buttons
+// loops through buttons
+// calls the onClickRPS function everytime player clicks
+
+const playGame = () => {
+
+    const rpsButtons = document.querySelectorAll('.rpsButton')
+    rpsButtons.onclick = () => rpsButtons.value
+    rpsButtons.forEach(rpsButton => {
+        rpsButton.onclick = () => onClickRPS(rpsButton.value)
+    })
+}
