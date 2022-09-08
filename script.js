@@ -1,3 +1,5 @@
+const totalScore = { computerScore: 0, playerScore: 0 }
+
 const getComputerChoice = () => {
     const choices = ['rock', 'paper', 'scissors']
     const computerChoice = Math.floor(Math.random() * choices.length);
@@ -27,9 +29,24 @@ const getResult = (playerChoice, computerChoice) => {
 }
 
 
+//updates winning score based on choice & displays total score
 const showResult = (score, playerChoice, computerChoice) => {
+    const resultDiv = document.getElementById('result')
+    const handsDiv = document.getElementById('hands')
+    const playerScoreDiv = document.getElementById('player-score')
 
+    if (score == -1) {
+        resultDiv.innerText = 'You Lose!';
+    } else if (score == 1) {
+        resultDiv.innerText = 'You win!';
+    } else {
+        resultDiv.innerText = "It's a Draw!";
+    }
+
+    handsDiv.innerText = `🧑 ${playerChoice} vs 🤖 ${computerChoice}`
+    playerScoreDiv.innerText = totalScore['playerScore']
 }
+
 
 
 //calculates who won and displays on screen
